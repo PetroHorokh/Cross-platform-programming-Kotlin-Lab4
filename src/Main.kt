@@ -1,5 +1,5 @@
 fun main() {
-    val payments: MutableList<Payment> = mutableListOf<Payment>()
+    val payments: MutableList<Payment> = mutableListOf()
 
     var executor = ProcessExecutor(StartProcess())
     executor.executeOperation(payments)
