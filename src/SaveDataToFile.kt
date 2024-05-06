@@ -2,7 +2,7 @@ import java.io.BufferedWriter
 import java.io.FileWriter
 import java.io.IOException
 
-class SavePaymentsToFile: Process {
+class SaveDataToFile: Process {
     override fun execute(payments: MutableList<Payment>) {
         val filename = "payments.txt"
 

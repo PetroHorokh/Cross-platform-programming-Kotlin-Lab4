@@ -1,4 +1,4 @@
-class GetPaymentByLastName: Process {
+class GetByLastName: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Введіть прізвище для пошуку оплат:")
         val lastName: String = readln()
@@ -6,7 +6,7 @@ class GetPaymentByLastName: Process {
         var found = false
 
         for (record in payments) {
-            if (record.getLastName().equals(lastName, ignoreCase = true)) {
+            if (record.getLastName() == lastName) {
                 found = true
                 println(record.toString())
             }

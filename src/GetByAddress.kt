@@ -1,4 +1,4 @@
-class GetPaymentByAddress: Process {
+class GetByAddress: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Введіть адресу для пошуку оплат:")
         val address: String = readln()

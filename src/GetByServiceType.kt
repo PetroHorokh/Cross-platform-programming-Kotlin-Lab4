@@ -1,4 +1,4 @@
-class GetPaymentsByServiceType: Process {
+class GetByServiceType: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Введіть тип сервісу для пошуку оплат:")
         val serviceType: String = readln()
@@ -6,7 +6,7 @@ class GetPaymentsByServiceType: Process {
         var found = false
 
         for (record in payments) {
-            if (record.getServiceType().equals(serviceType, ignoreCase = true)) {
+            if (record.getServiceType() == serviceType) {
                 found = true
                 println(record.toString())
             }

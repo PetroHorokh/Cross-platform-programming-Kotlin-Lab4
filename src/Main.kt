@@ -1,7 +1,9 @@
+import kotlin.system.exitProcess
+
 fun main() {
     val payments: MutableList<Payment> = mutableListOf()
 
-    var executor = ProcessExecutor(StartProcess())
+    var executor = ProcessExecutor(ReadDataFromFile())
     executor.executeOperation(payments)
 
     while (true) {
@@ -24,27 +26,27 @@ fun main() {
 
         when (choice) {
             1 -> {
-                executor = ProcessExecutor(GetAllPayments())
+                executor = ProcessExecutor(GetAll())
                 executor.executeOperation(payments)
             }
 
             2 -> {
-                executor = ProcessExecutor(GetPaymentByAddress())
+                executor = ProcessExecutor(GetByAddress())
                 executor.executeOperation(payments)
             }
 
             3 -> {
-                executor = ProcessExecutor(GetPaymentsByServiceType())
+                executor = ProcessExecutor(GetByServiceType())
                 executor.executeOperation(payments)
             }
 
             4 -> {
-                executor = ProcessExecutor(GetPaymentByLastName())
+                executor = ProcessExecutor(GetByLastName())
                 executor.executeOperation(payments)
             }
 
             5 -> {
-                executor = ProcessExecutor(PostPayment())
+                executor = ProcessExecutor(Post())
                 executor.executeOperation(payments)
             }
 
@@ -54,12 +56,12 @@ fun main() {
             }
 
             7 ->{
-                executor = ProcessExecutor(DeletePaymentByLastName())
+                executor = ProcessExecutor(DeleteByLastName())
                 executor.executeOperation(payments)
             }
 
             8 ->{
-                executor = ProcessExecutor(DeletePaymentByServiceType())
+                executor = ProcessExecutor(DeleteByServiceType())
                 executor.executeOperation(payments)
             }
 
@@ -69,20 +71,19 @@ fun main() {
             }
 
             10 ->{
-                executor = ProcessExecutor(GetPaymentsFromFile())
+                executor = ProcessExecutor(ReadDataFromFile())
                 executor.executeOperation(payments)
             }
 
             11 ->{
-                executor = ProcessExecutor(SavePaymentsToFile())
+                executor = ProcessExecutor(SaveDataToFile())
                 executor.executeOperation(payments)
             }
 
             12 ->{
-                executor = ProcessExecutor(SavePaymentsToFile())
+                executor = ProcessExecutor(SaveDataToFile())
                 executor.executeOperation(payments)
-                executor = ProcessExecutor(EndProcess())
-                executor.executeOperation(payments)
+                exitProcess(0)
             }
 
             else ->{

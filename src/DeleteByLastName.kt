@@ -1,14 +1,19 @@
-class DeletePaymentByLastName: Process {
+class DeleteByLastName: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Введіть прізвище, за яким потрібно видалити оплати:")
         val lastName: String = readln()
 
         var found = false
 
-        for (obj in payments) {
-            if (obj.getLastName() == lastName) {
-                payments.remove(obj)
+        var i = 0
+
+        while (i < payments.size){
+            if (payments[i].getLastName() == lastName) {
+                payments.remove(payments[i])
                 found = true
+            }
+            else{
+                i++
             }
         }
 

@@ -1,7 +1,7 @@
 import java.io.IOException
 import java.io.File
 
-class GetPaymentsFromFile: Process {
+class ReadDataFromFile: Process {
     override fun execute(payments: MutableList<Payment>) {
         payments.clear()
         val fileName = "payments.txt"

@@ -8,11 +8,14 @@ class PutPaymentsServiceType: Process {
 
         var found = false
 
-        for (obj in payments) {
-            if (obj.getServiceType() == serviceTypeToChange) {
-                obj.setServiceType(serviceTypeChange)
+        var i = 0
+
+        while (i < payments.size){
+            if (payments[i].getServiceType() == serviceTypeToChange) {
+                payments[i].setServiceType(serviceTypeChange)
                 found = true
             }
+            i++
         }
 
         if (!found) {

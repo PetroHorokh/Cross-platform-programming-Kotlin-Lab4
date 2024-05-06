@@ -1,4 +1,4 @@
-class GetAllPayments: Process {
+class GetAll: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Дані про оплати:")
 

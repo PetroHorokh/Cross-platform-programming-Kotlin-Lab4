@@ -1,14 +1,19 @@
-class DeletePaymentByServiceType: Process {
+class DeleteByServiceType: Process {
     override fun execute(payments: MutableList<Payment>) {
         println("Введіть тип послуги, за яким потрібно видалити оплати:")
         val serviceType: String = readln()
 
         var found = false
 
-        for (obj in payments) {
-            if (obj.getServiceType() == serviceType) {
-                payments.remove(obj)
+        var i = 0
+
+        while (i < payments.size){
+            if (payments[i].getServiceType() == serviceType) {
+                payments.remove(payments[i])
                 found = true
+            }
+            else{
+                i++
             }
         }
 
